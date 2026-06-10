@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Painel - Guia Digital para Idosos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <button onclick="aumentarFonte()" aria-label="Aumentar tamanho da letra">🔤 A+</button>
+        <button onclick="diminuirFonte()" aria-label="Diminuir tamanho da letra">🔤 A-</button>
+        <button onclick="toggleContraste()" aria-label="Alternar alto contraste">🌗 Contraste</button>
+        <button onclick="lerPagina()" aria-label="Ler página em voz alta">🔊 Ler Página</button>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📱</span>
+                <span class="logo-text">Guia Digital para Idosos</span>
+            </a>
+            <nav class="nav-menu" aria-label="Menu principal">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="trilhas.html" class="nav-link">Trilhas</a>
+                <a href="dashboard.html" class="nav-link active">Meu Painel</a>
+                <a href="index.html" class="nav-link" onclick="fazerLogout()">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard -->
+    <main class="dashboard-container fade-in">
+        <!-- Boas Vindas -->
+        <div class="dashboard-welcome">
+            <h2>👋 Olá, <span id="nomeUsuario">Maria</span>!</h2>
+            <p>Continue aprendendo! Você está indo muito bem. Cada passo conta!</p>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <span class="stat-icon">📚</span>
+                <div class="stat-value" id="aulasCompletas">0</div>
+                <div class="stat-label">Aulas Concluídas</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">⭐</span>
+                <div class="stat-value" id="pontuacao">0</div>
+                <div class="stat-label">Pontos</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">🏆</span>
+                <div class="stat-value" id="certificados">0</div>
+                <div class="stat-label">Certificados</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">📊</span>
+                <div class="stat-value" id="nivel">Iniciante</div>
+                <div class="stat-label">Seu Nível</div>
+            </div>
+        </div>
+
+        <!-- Progresso Geral -->
+        <div class="progress-container">
+            <h3 class="progress-title">📈 Seu Progresso Geral</h3>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: 0%;" id="progressoGeral">0%</div>
+            </div>
+            <p id="resumoGeral" style="margin-top: 10px; color: var(--text-medium); font-size: 16px;">
+                Continue aprendendo para aumentar o seu progresso!
+            </p>
+        </div>
+
+        <!-- Trilhas em Andamento -->
+        <div class="progress-container">
+            <h3 class="progress-title">📖 Trilhas em Andamento</h3>
+
+            <div style="margin-top: 20px;">
+                <!-- Trilha 1 -->
+                <div style="margin-bottom: 25px; padding: 20px; background: var(--bg-light); border-radius: var(--radius); border: 1px solid var(--border);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 36px;">📱</span>
+                            <div>
+                                <h4 style="font-size: var(--font-size-base); font-weight: 600;">Smartphone Android</h4>
+                                <p style="font-size: 14px; color: var(--text-light);">3 de 8 aulas concluídas</p>
+                            </div>
+                        </div>
+                        <a href="trilhas.html" class="btn btn-primary" style="padding: 10px 20px; min-height: auto;">
+                            Continuar ➡️
+                        </a>
+                    </div>
+                    <div class="progress-bar-bg" style="margin-top: 12px; height: 16px;">
+                        <div class="progress-bar-fill" style="width: 37%;">37%</div>
+                    </div>
+                </div>
+
+                <!-- Trilha 2 -->
+                <div style="margin-bottom: 25px; padding: 20px; background: var(--bg-light); border-radius: var(--radius); border: 1px solid var(--border);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 36px;">💬</span>
+                            <div>
+                                <h4 style="font-size: var(--font-size-base); font-weight: 600;">WhatsApp</h4>
+                                <p id="textoWhatsappDashboard" style="font-size: 14px; color: var(--text-light);">0 de 10 aulas concluídas</p>
+                            </div>
+                        </div>
+                        <a href="trilha-whatsapp.html" id="btnWhatsappDashboard" class="btn btn-outline" style="padding: 10px 20px; min-height: auto;">
+                            Iniciar ➡️
+                        </a>
+                    </div>
+                    <div class="progress-bar-bg" style="margin-top: 12px; height: 16px;">
+                        <div class="progress-bar-fill" id="barraWhatsappDashboard" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conquistas Recentes -->
+        <div class="progress-container">
+            <h3 class="progress-title">🏅 Conquistas Recentes</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div style="text-align: center; padding: 20px; background: var(--accent-light); border-radius: var(--radius);">
+                    <span style="font-size: 48px; display: block;">🎯</span>
+                    <strong style="display: block; margin-top: 8px;">Primeira Aula!</strong>
+                    <span style="font-size: 14px; color: var(--text-light);">Completou sua primeira aula</span>
+                </div>
+                <div style="text-align: center; padding: 20px; background: var(--secondary-light); border-radius: var(--radius);">
+                    <span style="font-size: 48px; display: block;">📱</span>
+                    <strong style="display: block; margin-top: 8px;">Explorador</strong>
+                    <span style="font-size: 14px; color: var(--text-light);">Aprendeu a usar o celular</span>
+                </div>
+                <div style="text-align: center; padding: 20px; background: var(--bg-light); border-radius: var(--radius); border: 2px dashed var(--border);">
+                    <span style="font-size: 48px; display: block; opacity: 0.4;">🔒</span>
+                    <strong style="display: block; margin-top: 8px; color: var(--text-light);">Em breve...</strong>
+                    <span style="font-size: 14px; color: var(--text-light);">Continue aprendendo!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preferências -->
+        <div class="progress-container">
+            <h3 class="progress-title">⚙️ Minhas Preferências</h3>
+            <div style="margin-top: 20px; display: grid; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: var(--bg-light); border-radius: var(--radius);">
+                    <span style="font-size: 28px;">📊</span>
+                    <div style="flex: 1;">
+                        <strong>Nível atual:</strong> Iniciante
+                    </div>
+                    <a href="nivel.html" class="btn btn-outline" style="padding: 8px 16px; min-height: auto; font-size: 14px;">Alterar</a>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: var(--bg-light); border-radius: var(--radius);">
+                    <span style="font-size: 28px;">🎯</span>
+                    <div style="flex: 1;">
+                        <strong>Interesse principal:</strong> Aprender WhatsApp
+                    </div>
+                    <button class="btn btn-outline" style="padding: 8px 16px; min-height: auto; font-size: 14px;">Alterar</button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: var(--danger-light); border-radius: var(--radius);">
+                    <span style="font-size: 28px;">🗑️</span>
+                    <div style="flex: 1;">
+                        <strong>Excluir minha conta</strong>
+                        <p style="font-size: 14px; color: var(--text-light);">Remove todos os seus dados permanentemente</p>
+                    </div>
+                    <button class="btn" style="padding: 8px 16px; min-height: auto; font-size: 14px; background: var(--danger); color: white;" onclick="confirmarExclusao()">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">📱 Guia Digital para Idosos</p>
+            <p class="footer-text" style="font-size: 14px;">
+                © 2024 Guia Digital para Idosos. Seus dados estão protegidos e nunca são compartilhados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Assistente Virtual -->
+    <button class="assistant-btn" onclick="toggleAssistant()" aria-label="Abrir assistente virtual">💬</button>
+    <div class="assistant-panel" id="assistantPanel">
+        <div class="assistant-header">
+            <span>🤖 Assistente Virtual</span>
+            <button class="assistant-close" onclick="toggleAssistant()">✕</button>
+        </div>
+        <div class="assistant-messages" id="assistantMessages">
+            <div class="assistant-message bot">
+                Parabéns pelo seu progresso! Quer que eu sugira a próxima aula para você? 😊
+            </div>
+        </div>
+        <div class="assistant-input-area">
+            <input type="text" class="assistant-input" id="assistantInput"
+                   placeholder="Digite sua dúvida..."
+                   onkeypress="if(event.key==='Enter')enviarMensagem()">
+            <button class="assistant-send" onclick="enviarMensagem()">➤</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

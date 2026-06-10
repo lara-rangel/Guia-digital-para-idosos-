@@ -1,0 +1,23 @@
+{
+  "name": "guia-digital-idosos-backend",
+  "version": "1.0.0",
+  "description": "Backend do Guia Digital para Idosos - API com Prisma + SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "prisma:generate": "npx prisma generate",
+    "prisma:migrate": "npx prisma migrate dev --name init",
+    "setup": "npx prisma generate && npx prisma migrate dev --name init"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.20.0",
+    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.20.0"
+  }
+}

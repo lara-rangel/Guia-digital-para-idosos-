@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilhas de Aprendizado - Guia Digital para Idosos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <button onclick="aumentarFonte()" aria-label="Aumentar tamanho da letra">🔤 A+</button>
+        <button onclick="diminuirFonte()" aria-label="Diminuir tamanho da letra">🔤 A-</button>
+        <button onclick="toggleContraste()" aria-label="Alternar alto contraste">🌗 Contraste</button>
+        <button onclick="lerPagina()" aria-label="Ler página em voz alta">🔊 Ler Página</button>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📱</span>
+                <span class="logo-text">Guia Digital para Idosos</span>
+            </a>
+            <nav class="nav-menu" aria-label="Menu principal">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="trilhas.html" class="nav-link active">Trilhas</a>
+                <a href="dashboard.html" class="nav-link">Meu Painel</a>
+                <a href="login.html" class="nav-link">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Trilhas de Aprendizado -->
+    <main class="trails-container fade-in">
+        <h1 class="section-title">📚 Trilhas de Aprendizado</h1>
+        <p class="section-subtitle">Escolha um assunto para começar a aprender. Cada trilha tem várias aulas!</p>
+
+        <div class="trails-grid">
+            <!-- Smartphone Android -->
+            <a href="#" class="trail-card" onclick="abrirTrilha('smartphone')">
+                <span class="trail-badge">8 aulas</span>
+                <span class="card-icon">📱</span>
+                <h2 class="card-title">Uso de Smartphone Android</h2>
+                <p class="card-description">Aprenda desde ligar o celular até baixar aplicativos</p>
+                <div class="progress-bar-bg" style="margin-top: 15px; height: 20px;">
+                    <div class="progress-bar-fill" style="width: 0%;">0%</div>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="trilha-whatsapp.html" class="trail-card">
+                <span class="trail-badge">10 aulas</span>
+                <span class="card-icon">💬</span>
+                <h2 class="card-title">WhatsApp</h2>
+                <p class="card-description">Mensagens, fotos, áudios, chamadas de vídeo e grupos</p>
+                <div class="progress-bar-bg" style="margin-top: 15px; height: 20px;">
+                    <div class="progress-bar-fill" id="barraWhatsappTrilhas" style="width: 0%;">0%</div>
+                </div>
+            </a>
+
+            <!-- Redes Sociais -->
+            <a href="#" class="trail-card" onclick="abrirTrilha('redes-sociais')">
+                <span class="trail-badge">7 aulas</span>
+                <span class="card-icon">👥</span>
+                <h2 class="card-title">Redes Sociais</h2>
+                <p class="card-description">Facebook, Instagram e YouTube para iniciantes</p>
+                <div class="progress-bar-bg" style="margin-top: 15px; height: 20px;">
+                    <div class="progress-bar-fill" style="width: 0%;">0%</div>
+                </div>
+            </a>
+
+            <!-- E-mail -->
+            <a href="#" class="trail-card" onclick="abrirTrilha('email')">
+                <span class="trail-badge">6 aulas</span>
+                <span class="card-icon">📧</span>
+                <h2 class="card-title">E-mail</h2>
+                <p class="card-description">Criar conta, enviar, receber e organizar mensagens</p>
+                <div class="progress-bar-bg" style="margin-top: 15px; height: 20px;">
+                    <div class="progress-bar-fill" style="width: 0%;">0%</div>
+                </div>
+            </a>
+
+            <!-- Compras Online -->
+            <a href="#" class="trail-card" onclick="abrirTrilha('compras')">
+                <span class="trail-badge">6 aulas</span>
+                <span class="card-icon">🛒</span>
+                <h2 class="card-title">Compras Online</h2>
+                <p class="card-description">Compre com segurança em lojas virtuais confiáveis</p>
+                <div class="progress-bar-bg" style="margin-top: 15px; height: 20px;">
+                    <div class="progress-bar-fill" style="width: 0%;">0%</div>
+                </div>
+            </a>
+
+            <!-- Segurança Digital -->
+            <a href="#" class="trail-card" onclick="abrirTrilha('seguranca')">
+                <span class="trail-badge">8 aulas</span>
+                <span class="card-icon">🔒</span>
+                <h2 class="card-title">Segurança Digital</h2>
+                <p class="card-description">Proteja suas senhas, dados pessoais e privacidade</p>
+                <div class="progress-bar-bg" style="margin-top: 15px; height: 20px;">
+                    <div class="progress-bar-fill" style="width: 0%;">0%</div>
+                </div>
+            </a>
+
+            <!-- Golpes na Internet -->
+            <a href="#" class="trail-card" onclick="abrirTrilha('golpes')">
+                <span class="trail-badge">9 aulas</span>
+                <span class="card-icon">⚠️</span>
+                <h2 class="card-title">Golpes na Internet</h2>
+                <p class="card-description">Identifique e evite fraudes, links falsos e estelionatos</p>
+                <div class="progress-bar-bg" style="margin-top: 15px; height: 20px;">
+                    <div class="progress-bar-fill" style="width: 0%;">0%</div>
+                </div>
+            </a>
+
+            <!-- Aplicativos Bancários -->
+            <a href="#" class="trail-card" onclick="abrirTrilha('bancos')">
+                <span class="trail-badge">7 aulas</span>
+                <span class="card-icon">🏦</span>
+                <h2 class="card-title">Aplicativos Bancários</h2>
+                <p class="card-description">Pix, consultar saldo, pagar boletos com segurança</p>
+                <div class="progress-bar-bg" style="margin-top: 15px; height: 20px;">
+                    <div class="progress-bar-fill" style="width: 0%;">0%</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Recomendação -->
+        <div style="margin-top: 50px; text-align: center; background: var(--accent-light); padding: 30px; border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-lg); margin-bottom: 10px;">💡 Dica:</h3>
+            <p style="font-size: var(--font-size-base); color: var(--text-medium);">
+                Se você é iniciante, recomendamos começar pela trilha <strong>"Uso de Smartphone Android"</strong>.
+                Ela ensina o básico que você precisa para as outras trilhas!
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">📱 Guia Digital para Idosos</p>
+            <p class="footer-text" style="font-size: 14px;">
+                © 2024 Guia Digital para Idosos. Seus dados estão protegidos.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Assistente Virtual -->
+    <button class="assistant-btn" onclick="toggleAssistant()" aria-label="Abrir assistente virtual">💬</button>
+    <div class="assistant-panel" id="assistantPanel">
+        <div class="assistant-header">
+            <span>🤖 Assistente Virtual</span>
+            <button class="assistant-close" onclick="toggleAssistant()">✕</button>
+        </div>
+        <div class="assistant-messages" id="assistantMessages">
+            <div class="assistant-message bot">
+                Qual trilha te interessa? Posso explicar o que você vai aprender em cada uma! 😊
+            </div>
+        </div>
+        <div class="assistant-input-area">
+            <input type="text" class="assistant-input" id="assistantInput"
+                   placeholder="Digite sua dúvida..."
+                   onkeypress="if(event.key==='Enter')enviarMensagem()">
+            <button class="assistant-send" onclick="enviarMensagem()">➤</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

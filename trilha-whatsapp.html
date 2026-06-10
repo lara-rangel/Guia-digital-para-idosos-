@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha de WhatsApp - Guia Digital para Idosos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <button onclick="aumentarFonte()" aria-label="Aumentar tamanho da letra">🔤 A+</button>
+        <button onclick="diminuirFonte()" aria-label="Diminuir tamanho da letra">🔤 A-</button>
+        <button onclick="toggleContraste()" aria-label="Alternar alto contraste">🌗 Contraste</button>
+        <button onclick="lerPagina()" aria-label="Ler página em voz alta">🔊 Ler Página</button>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📱</span>
+                <span class="logo-text">Guia Digital para Idosos</span>
+            </a>
+            <nav class="nav-menu" aria-label="Menu principal">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="trilhas.html" class="nav-link active">Trilhas</a>
+                <a href="dashboard.html" class="nav-link">Meu Painel</a>
+                <a href="index.html" class="nav-link" onclick="fazerLogout()">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Trilha de WhatsApp -->
+    <main class="trails-container fade-in">
+        <a href="trilhas.html" class="btn btn-outline" style="margin-bottom: 25px;">⬅️ Voltar para as Trilhas</a>
+
+        <!-- Cabeçalho da Trilha -->
+        <div class="trail-hero">
+            <span class="trail-hero-icon">💬</span>
+            <h1 class="section-title" style="margin-bottom: 8px;">Trilha de WhatsApp</h1>
+            <p class="section-subtitle" style="margin-bottom: 0;">
+                Aprenda, no seu ritmo, a usar o WhatsApp do começo ao fim.
+                Marque cada aula como concluída para salvar o seu progresso!
+            </p>
+        </div>
+
+        <!-- Aviso de login (aparece quando não está logado) -->
+        <div id="avisoLogin" class="login-warning" style="display: none;">
+            <span style="font-size: 28px;">🔒</span>
+            <div>
+                <strong>Entre na sua conta para salvar o progresso.</strong>
+                <p style="font-size: 16px; color: var(--text-medium);">
+                    Você pode ler as aulas livremente, mas para guardar o que já concluiu é preciso
+                    <a href="login.html" style="color: var(--primary); font-weight: 600;">fazer login</a>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Resumo do Progresso -->
+        <div class="progress-container">
+            <h2 class="progress-title">📈 Seu progresso nesta trilha</h2>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="barraProgressoWhatsapp" style="width: 0%;">0%</div>
+            </div>
+            <p id="contadorAulas" style="margin-top: 12px; color: var(--text-medium); font-size: var(--font-size-base);">
+                0 de 10 aulas concluídas
+            </p>
+            <div id="mensagemParabens" class="trail-congrats" style="display: none;">
+                🎉 Parabéns! Você concluiu toda a trilha de WhatsApp e ganhou um certificado!
+            </div>
+        </div>
+
+        <!-- Lista de Aulas (gerada pelo app.js) -->
+        <div id="listaAulas" class="lessons-list"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">📱 Guia Digital para Idosos</p>
+            <p class="footer-text" style="font-size: 14px;">
+                © 2024 Guia Digital para Idosos. Seu progresso fica salvo com segurança.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Assistente Virtual -->
+    <button class="assistant-btn" onclick="toggleAssistant()" aria-label="Abrir assistente virtual">💬</button>
+    <div class="assistant-panel" id="assistantPanel">
+        <div class="assistant-header">
+            <span>🤖 Assistente Virtual</span>
+            <button class="assistant-close" onclick="toggleAssistant()">✕</button>
+        </div>
+        <div class="assistant-messages" id="assistantMessages">
+            <div class="assistant-message bot">
+                Está com dúvida em alguma aula de WhatsApp? Pode me perguntar! 😊
+            </div>
+        </div>
+        <div class="assistant-input-area">
+            <input type="text" class="assistant-input" id="assistantInput"
+                   placeholder="Digite sua dúvida..."
+                   onkeypress="if(event.key==='Enter')enviarMensagem()">
+            <button class="assistant-send" onclick="enviarMensagem()">➤</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

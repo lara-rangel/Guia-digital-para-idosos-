@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Guia Digital para Idosos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <button onclick="aumentarFonte()" aria-label="Aumentar tamanho da letra">🔤 A+</button>
+        <button onclick="diminuirFonte()" aria-label="Diminuir tamanho da letra">🔤 A-</button>
+        <button onclick="toggleContraste()" aria-label="Alternar alto contraste">🌗 Contraste</button>
+        <button onclick="lerPagina()" aria-label="Ler página em voz alta">🔊 Ler Página</button>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📱</span>
+                <span class="logo-text">Guia Digital para Idosos</span>
+            </a>
+            <nav class="nav-menu" aria-label="Menu principal">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="trilhas.html" class="nav-link">Trilhas</a>
+                <a href="login.html" class="nav-link">Entrar</a>
+                <a href="cadastro.html" class="btn btn-primary">Cadastre-se</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <main class="form-container fade-in">
+        <div class="form-card">
+            <h1 class="form-title">✨ Crie sua Conta</h1>
+            <p class="form-subtitle">É rápido, fácil e gratuito!</p>
+
+            <form id="cadastroForm" onsubmit="fazerCadastro(event)">
+                <div class="form-group">
+                    <label for="nome" class="form-label">👤 Seu Nome Completo</label>
+                    <input type="text" id="nome" class="form-input"
+                           placeholder="Digite seu nome"
+                           required
+                           aria-describedby="nomeHelp">
+                    <span class="form-help" id="nomeHelp">Como você gostaria de ser chamado(a)</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">📧 Seu E-mail</label>
+                    <input type="email" id="email" class="form-input"
+                           placeholder="exemplo@email.com"
+                           required
+                           aria-describedby="emailHelp">
+                    <span class="form-help" id="emailHelp">Você usará o e-mail para entrar na plataforma</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="idade" class="form-label">🎂 Sua Idade</label>
+                    <input type="number" id="idade" class="form-input"
+                           placeholder="Ex: 65"
+                           min="1" max="120"
+                           aria-describedby="idadeHelp">
+                    <span class="form-help" id="idadeHelp">Opcional - nos ajuda a personalizar seu aprendizado</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha" class="form-label">🔒 Crie uma Senha</label>
+                    <input type="password" id="senha" class="form-input"
+                           placeholder="Mínimo 6 caracteres"
+                           required
+                           minlength="6"
+                           aria-describedby="senhaHelp">
+                    <span class="form-help" id="senhaHelp">Use pelo menos 6 letras ou números</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarSenha" class="form-label">🔒 Confirme sua Senha</label>
+                    <input type="password" id="confirmarSenha" class="form-input"
+                           placeholder="Digite a senha novamente"
+                           required
+                           aria-describedby="confirmarHelp">
+                    <span class="form-help" id="confirmarHelp">Digite a mesma senha de cima</span>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: var(--font-size-base);">
+                        <input type="checkbox" id="mostrarSenha" onchange="toggleSenhaCadastro()" style="width: 22px; height: 22px;">
+                        Mostrar senhas
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: var(--font-size-base); line-height: 1.5;">
+                        <input type="checkbox" id="termos" required style="width: 22px; height: 22px; margin-top: 4px;">
+                        Li e aceito os termos de uso. Entendo que meus dados são usados apenas para meu aprendizado e não serão compartilhados com ninguém.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-large">
+                    ✅ Criar Minha Conta
+                </button>
+            </form>
+
+            <div class="form-link">
+                <p>Já tem uma conta? <a href="login.html">Entre aqui</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">📱 Guia Digital para Idosos</p>
+            <p class="footer-text" style="font-size: 14px;">
+                © 2024 Guia Digital para Idosos. Nenhum dado é compartilhado com terceiros.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Assistente Virtual -->
+    <button class="assistant-btn" onclick="toggleAssistant()" aria-label="Abrir assistente virtual">💬</button>
+    <div class="assistant-panel" id="assistantPanel">
+        <div class="assistant-header">
+            <span>🤖 Assistente Virtual</span>
+            <button class="assistant-close" onclick="toggleAssistant()">✕</button>
+        </div>
+        <div class="assistant-messages" id="assistantMessages">
+            <div class="assistant-message bot">
+                Vou ajudar você a criar sua conta! Se tiver dúvidas sobre algum campo, é só perguntar. 😊
+            </div>
+        </div>
+        <div class="assistant-input-area">
+            <input type="text" class="assistant-input" id="assistantInput"
+                   placeholder="Digite sua dúvida..."
+                   onkeypress="if(event.key==='Enter')enviarMensagem()">
+            <button class="assistant-send" onclick="enviarMensagem()">➤</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

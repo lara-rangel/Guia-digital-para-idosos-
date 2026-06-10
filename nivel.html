@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha seu Nível - Guia Digital para Idosos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <button onclick="aumentarFonte()" aria-label="Aumentar tamanho da letra">🔤 A+</button>
+        <button onclick="diminuirFonte()" aria-label="Diminuir tamanho da letra">🔤 A-</button>
+        <button onclick="toggleContraste()" aria-label="Alternar alto contraste">🌗 Contraste</button>
+        <button onclick="lerPagina()" aria-label="Ler página em voz alta">🔊 Ler Página</button>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📱</span>
+                <span class="logo-text">Guia Digital para Idosos</span>
+            </a>
+            <nav class="nav-menu" aria-label="Menu principal">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="trilhas.html" class="nav-link">Trilhas</a>
+                <a href="dashboard.html" class="nav-link">Meu Painel</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seleção de Nível -->
+    <main class="level-container fade-in">
+        <h1 class="section-title">📊 Qual é o seu nível?</h1>
+        <p class="section-subtitle">
+            Não se preocupe, você pode mudar depois! Isso nos ajuda a mostrar
+            aulas adequadas para você.
+        </p>
+
+        <div class="level-cards">
+            <!-- Iniciante -->
+            <div class="level-card" onclick="selecionarNivel('iniciante', this)" tabindex="0"
+                 role="button" aria-label="Selecionar nível iniciante">
+                <span class="card-icon">🌱</span>
+                <h2 class="card-title">Iniciante</h2>
+                <p class="card-description">
+                    Nunca usei ou uso muito pouco o celular e a internet.
+                    Quero aprender do zero!
+                </p>
+                <ul style="text-align: left; margin-top: 15px; font-size: 16px; color: var(--text-medium);">
+                    <li>✅ Ligar e desligar o celular</li>
+                    <li>✅ Fazer ligações</li>
+                    <li>✅ Enviar mensagens simples</li>
+                    <li>✅ Tirar fotos</li>
+                </ul>
+            </div>
+
+            <!-- Intermediário -->
+            <div class="level-card" onclick="selecionarNivel('intermediario', this)" tabindex="0"
+                 role="button" aria-label="Selecionar nível intermediário">
+                <span class="card-icon">🌿</span>
+                <h2 class="card-title">Intermediário</h2>
+                <p class="card-description">
+                    Já uso o celular para coisas básicas mas quero aprender mais.
+                </p>
+                <ul style="text-align: left; margin-top: 15px; font-size: 16px; color: var(--text-medium);">
+                    <li>✅ Usar WhatsApp melhor</li>
+                    <li>✅ Redes sociais</li>
+                    <li>✅ Baixar aplicativos</li>
+                    <li>✅ Compras online</li>
+                </ul>
+            </div>
+
+            <!-- Avançado -->
+            <div class="level-card" onclick="selecionarNivel('avancado', this)" tabindex="0"
+                 role="button" aria-label="Selecionar nível avançado">
+                <span class="card-icon">🌳</span>
+                <h2 class="card-title">Avançado</h2>
+                <p class="card-description">
+                    Já uso bem o celular e quero aprender sobre segurança e apps bancários.
+                </p>
+                <ul style="text-align: left; margin-top: 15px; font-size: 16px; color: var(--text-medium);">
+                    <li>✅ Segurança digital</li>
+                    <li>✅ Identificar golpes</li>
+                    <li>✅ Aplicativos bancários</li>
+                    <li>✅ Configurações avançadas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <a href="trilhas.html" class="btn btn-primary btn-large" id="btnContinuar" style="display: none;">
+                ➡️ Continuar para as Trilhas
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">📱 Guia Digital para Idosos</p>
+            <p class="footer-text" style="font-size: 14px;">
+                © 2024 Guia Digital para Idosos. Seus dados estão protegidos.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Assistente Virtual -->
+    <button class="assistant-btn" onclick="toggleAssistant()" aria-label="Abrir assistente virtual">💬</button>
+    <div class="assistant-panel" id="assistantPanel">
+        <div class="assistant-header">
+            <span>🤖 Assistente Virtual</span>
+            <button class="assistant-close" onclick="toggleAssistant()">✕</button>
+        </div>
+        <div class="assistant-messages" id="assistantMessages">
+            <div class="assistant-message bot">
+                Não sabe qual nível escolher? Sem problemas! Se você nunca usou um celular ou usa pouco, escolha "Iniciante". Você pode mudar depois! 😊
+            </div>
+        </div>
+        <div class="assistant-input-area">
+            <input type="text" class="assistant-input" id="assistantInput"
+                   placeholder="Digite sua dúvida..."
+                   onkeypress="if(event.key==='Enter')enviarMensagem()">
+            <button class="assistant-send" onclick="enviarMensagem()">➤</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

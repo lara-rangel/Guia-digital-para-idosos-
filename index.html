@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Digital para Idosos - Aprenda Tecnologia com Facilidade</title>
+    <meta name="description" content="Plataforma educacional para ensinar tecnologia a pessoas da terceira idade de forma simples e acessível.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <button onclick="aumentarFonte()" aria-label="Aumentar tamanho da letra" title="Aumentar letra">
+            🔤 A+
+        </button>
+        <button onclick="diminuirFonte()" aria-label="Diminuir tamanho da letra" title="Diminuir letra">
+            🔤 A-
+        </button>
+        <button onclick="toggleContraste()" aria-label="Alternar alto contraste" title="Alto contraste">
+            🌗 Contraste
+        </button>
+        <button onclick="lerPagina()" aria-label="Ler página em voz alta" title="Ler em voz alta">
+            🔊 Ler Página
+        </button>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📱</span>
+                <span class="logo-text">Guia Digital para Idosos</span>
+            </a>
+            <nav class="nav-menu" aria-label="Menu principal">
+                <a href="index.html" class="nav-link active">Início</a>
+                <a href="trilhas.html" class="nav-link">Trilhas</a>
+                <a href="login.html" class="nav-link">Entrar</a>
+                <a href="cadastro.html" class="btn btn-primary">Cadastre-se</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <span class="hero-icon">👴👵</span>
+            <h1>Aprenda Tecnologia no Seu Ritmo</h1>
+            <p>
+                Nunca é tarde para aprender! Aqui você encontra aulas simples,
+                passo a passo, para usar celular, WhatsApp, redes sociais e muito mais.
+                Tudo feito especialmente para você.
+            </p>
+            <div class="hero-buttons">
+                <a href="cadastro.html" class="btn btn-primary btn-large">
+                    ✨ Começar Agora - É Grátis!
+                </a>
+                <a href="#como-funciona" class="btn btn-outline btn-large">
+                    ℹ️ Como Funciona?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="features-section" id="como-funciona">
+        <h2 class="section-title">Como Funciona?</h2>
+        <p class="section-subtitle">Em 3 passos simples você começa a aprender</p>
+        <div class="features-grid">
+            <div class="feature-item fade-in">
+                <span class="feature-icon">📝</span>
+                <h3 class="feature-title">1. Cadastre-se</h3>
+                <p class="feature-text">Crie sua conta com nome e e-mail. É rápido e simples!</p>
+            </div>
+            <div class="feature-item fade-in">
+                <span class="feature-icon">📊</span>
+                <h3 class="feature-title">2. Escolha seu Nível</h3>
+                <p class="feature-text">Iniciante, intermediário ou avançado. Você decide!</p>
+            </div>
+            <div class="feature-item fade-in">
+                <span class="feature-icon">🎓</span>
+                <h3 class="feature-title">3. Aprenda!</h3>
+                <p class="feature-text">Assista aulas, pratique e ganhe certificados!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trilhas Disponíveis -->
+    <section class="section">
+        <h2 class="section-title">O Que Você Pode Aprender</h2>
+        <p class="section-subtitle">Escolha o assunto que mais interessa você</p>
+        <div class="cards-grid">
+            <a href="trilhas.html" class="card fade-in">
+                <span class="card-icon">📱</span>
+                <h3 class="card-title">Smartphone Android</h3>
+                <p class="card-description">Aprenda a usar seu celular do zero</p>
+            </a>
+            <a href="trilhas.html" class="card fade-in">
+                <span class="card-icon">💬</span>
+                <h3 class="card-title">WhatsApp</h3>
+                <p class="card-description">Mande mensagens, fotos e faça chamadas</p>
+            </a>
+            <a href="trilhas.html" class="card fade-in">
+                <span class="card-icon">👥</span>
+                <h3 class="card-title">Redes Sociais</h3>
+                <p class="card-description">Facebook, Instagram e YouTube</p>
+            </a>
+            <a href="trilhas.html" class="card fade-in">
+                <span class="card-icon">📧</span>
+                <h3 class="card-title">E-mail</h3>
+                <p class="card-description">Envie e receba mensagens eletrônicas</p>
+            </a>
+            <a href="trilhas.html" class="card fade-in">
+                <span class="card-icon">🛒</span>
+                <h3 class="card-title">Compras Online</h3>
+                <p class="card-description">Compre com segurança pela internet</p>
+            </a>
+            <a href="trilhas.html" class="card fade-in">
+                <span class="card-icon">🔒</span>
+                <h3 class="card-title">Segurança Digital</h3>
+                <p class="card-description">Proteja suas informações pessoais</p>
+            </a>
+            <a href="trilhas.html" class="card fade-in">
+                <span class="card-icon">⚠️</span>
+                <h3 class="card-title">Golpes na Internet</h3>
+                <p class="card-description">Aprenda a identificar e evitar fraudes</p>
+            </a>
+            <a href="trilhas.html" class="card fade-in">
+                <span class="card-icon">🏦</span>
+                <h3 class="card-title">Aplicativos Bancários</h3>
+                <p class="card-description">Use o banco pelo celular com segurança</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="features-section">
+        <h2 class="section-title">O Que Dizem Nossos Alunos</h2>
+        <p class="section-subtitle">Pessoas como você que já aprenderam</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <span class="feature-icon">⭐⭐⭐⭐⭐</span>
+                <p class="feature-text">"Finalmente aprendi a mandar fotos no WhatsApp para meus netos!"</p>
+                <strong>Maria, 68 anos</strong>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⭐⭐⭐⭐⭐</span>
+                <p class="feature-text">"As aulas são muito claras. Consegui fazer Pix sozinho!"</p>
+                <strong>José, 72 anos</strong>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⭐⭐⭐⭐⭐</span>
+                <p class="feature-text">"Agora sei identificar golpes. Me sinto mais segura na internet."</p>
+                <strong>Ana, 65 anos</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section" style="text-align: center;">
+        <h2 class="section-title">Pronto para Começar?</h2>
+        <p class="section-subtitle">Junte-se a milhares de pessoas que já estão aprendendo</p>
+        <a href="cadastro.html" class="btn btn-primary btn-large">
+            🚀 Criar Minha Conta Grátis
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">📱 Guia Digital para Idosos</p>
+            <p class="footer-text">Ensino de tecnologia acessível e inclusivo</p>
+            <div class="footer-links">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Contato</a>
+                <a href="#">Ajuda</a>
+            </div>
+            <p class="footer-text" style="margin-top: 20px; font-size: 14px;">
+                © 2024 Guia Digital para Idosos. Nenhum dado é compartilhado com terceiros.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão Assistente Virtual -->
+    <button class="assistant-btn" onclick="toggleAssistant()" aria-label="Abrir assistente virtual" title="Precisa de ajuda? Clique aqui!">
+        💬
+    </button>
+
+    <!-- Painel do Assistente -->
+    <div class="assistant-panel" id="assistantPanel">
+        <div class="assistant-header">
+            <span>🤖 Assistente Virtual</span>
+            <button class="assistant-close" onclick="toggleAssistant()" aria-label="Fechar assistente">✕</button>
+        </div>
+        <div class="assistant-messages" id="assistantMessages">
+            <div class="assistant-message bot">
+                Olá! Eu sou o assistente virtual. 😊 Como posso ajudar você hoje?
+                Pode me perguntar sobre qualquer dúvida de tecnologia!
+            </div>
+        </div>
+        <div class="assistant-input-area">
+            <input type="text" class="assistant-input" id="assistantInput"
+                   placeholder="Digite sua dúvida..."
+                   onkeypress="if(event.key==='Enter')enviarMensagem()">
+            <button class="assistant-send" onclick="enviarMensagem()" aria-label="Enviar mensagem">➤</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
