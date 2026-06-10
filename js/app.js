@@ -4,7 +4,7 @@
    Dados armazenados no banco SQLite via API
    ============================================ */
 
-var API_URL = 'https://guia-digital-para-idosos-api-v2.onrender.com';
+var API_URL = 'https://guia-digital-para-idosos-api-v2.onrender.com/api';
 
 // Soma de todas as aulas de todas as trilhas (usada no progresso geral)
 var TOTAL_AULAS_PLATAFORMA = 61;
